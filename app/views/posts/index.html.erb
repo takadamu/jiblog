@@ -5,9 +5,14 @@
     </div>
     <div class="content__right">
       <div class="content__right__top">
-        <%= link_to post.title, post_path(post.id), class: "content__right__top--title" %>
+        <%= link_to post.title, post_path(post.id), class: "content__right__top--title" %><brf>
+        <%= truncate(post.content, length: 20, omission: '....') %>
       </div>
       <div class="content__right__bottom">
+        <div class="content__right__bottom--userName">
+          <%= post.user.nickname %>
+
+        </div>
         <div class="content__right__bottom--date">
           <%= post.created_at %>
         </div>
